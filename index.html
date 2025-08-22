@@ -176,32 +176,36 @@
 
 .contact-center {
     display: flex;
-    justify-content: space-between; /* Even spacing between cards */
+    justify-content: center; /* Center the cards horizontally */
     align-items: center;
-    gap: 20px; /* Add spacing between cards */
+    gap: 20px; /* Reduce spacing between cards */
     padding: 20px;
 }
 
 .contact-card {
     background: black; /* Black background for cards */
     color: white; /* White text */
-    border-radius: 10px;
-    padding: 20px;
+    border-radius: 50%; /* Make it circular */
+    padding: 15px; /* Adjust padding for smaller size */
     text-align: center;
-    flex: 1; /* Ensure equal width for all cards */
-    max-width: 300px; /* Optional: Limit the maximum width */
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5); /* Add shadow */
+    flex: none; /* Remove equal width */
+    width: 60px; /* Set fixed width */
+    height: 60px; /* Set fixed height */
+    display: flex; /* Center the icon */
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5); /* Add shadow */
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .contact-card:hover {
-    transform: translateY(-10px); /* Lift effect on hover */
-    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.7);
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.7);
 }
 
 .contact-card i {
-    font-size: 3rem; /* Icon size */
-    margin-bottom: 10px;
+    font-size: 1.5rem; /* Adjust icon size */
+    margin: 0; /* Remove margin */
 }
 
 .contact-card h4 {
@@ -217,7 +221,6 @@
     margin-bottom: 20px; /* Adjust the value as needed */
 }
 
-/* Skills Section */
 /* Skills Section */
 .skills {
     text-align: center;
@@ -522,22 +525,16 @@
         <!-- Email Card -->
         <a href="mailto:shivam8897@gmail.com" class="contact-card">
             <i class='bx bx-envelope'></i>
-            <h4>Email</h4>
-            <p>shivam8897@gmail.com</p>
         </a>
 
         <!-- LinkedIn Card -->
         <a href="https://www.linkedin.com/in/shivam-krishana-22a239228" target="_blank" class="contact-card">
             <i class='bx bxl-linkedin' style="color: #0077B5;"></i>
-            <h4>LinkedIn</h4>
-            <p>linkedin.com/in/shivam-krishana-22a239228</p>
         </a>
 
         <!-- Instagram Card -->
         <a href="https://www.instagram.com/shivamkrishana" target="_blank" class="contact-card">
             <i class='bx bxl-instagram' style="color: #E4405F;"></i>
-            <h4>Instagram</h4>
-            <p>@shivamkrishana</p>
         </a>
     </div>
 </section>
