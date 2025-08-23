@@ -7,7 +7,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:title" content="Shivam - Portfolio" />
-<meta property="og:description" content="Portfolio of Shivam showcasing projects and skills." />
+<meta property="og:description" content="Portfolio of Shivam" />
 <meta property="og:type" content="website" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -147,13 +147,22 @@
         color: var(--main-color);
     }
 
+/* Default styles for the service-content grid */
 .service-content {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Set exactly 2 tiles per row */
-    gap: 20px; /* Equal gap between tiles */
-    justify-content: center; /* Center the grid */
-    align-items: center; /* Align items vertically */
-    padding: 20px; /* Add padding around the grid */
+    grid-template-columns: repeat(2, 1fr); /* Default: 2 tiles per row */
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Adjust layout for smaller screens */
+@media (max-width: 600px) {
+    .service-content {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 15px; /* Adjust gap for smaller screens */
+    }
 }
 
 .row {
@@ -316,6 +325,38 @@
 .home-img img:hover {
     transform: scale(1.05); /* Grow the image on hover */
     filter: none; /* Remove black and white filter on hover */
+}
+
+/* Default styles for the navbar */
+.navbar {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+/* Corrected media query */
+@media (max-width: 800px) {
+    .navbar {
+        display: none; /* Hide the navbar */
+        flex-direction: column;
+        background: #0b0b13; /* Optional: Add a background for the dropdown */
+        position: absolute;
+        top: 60px; /* Adjust based on your header height */
+        right: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar.active {
+        display: flex; /* Show the navbar when active */
+    }
+
+    #menu-icon {
+        display: block; /* Ensure the menu icon is visible */
+        font-size: 2rem;
+        cursor: pointer;
+    }
 }
 </style>
 </head>
@@ -611,6 +652,16 @@
         });
     }
 });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuIcon = document.getElementById('menu-icon');
+        const navbar = document.querySelector('.navbar');
+
+        menuIcon.addEventListener('click', () => {
+            navbar.classList.toggle('active'); // Toggle the 'active' class
+        });
+    });
 </script>
 </body>
 
