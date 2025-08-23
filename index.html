@@ -147,14 +147,14 @@
         color: var(--main-color);
     }
 
-/* Default styles for the service-content grid */
 .service-content {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Default: 2 tiles per row */
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+    grid-template-columns: repeat(2, 1fr); /* Set exactly 2 tiles per row */
+    gap: 20px; /* Equal gap between tiles */
+    justify-content: center; /* Center the grid */
+    align-items: stretch; /* Stretch items to fill the grid */
+    padding: 20px; /* Add padding around the grid */
+    grid-auto-rows: 1fr; /* Make all rows equal in height */
 }
 
 /* Adjust layout for smaller screens */
@@ -176,9 +176,12 @@
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.4s;
-    height: 280px; /* Fixed height */
     width: 100%; /* Allow tiles to adjust width */
     margin: 0; /* Remove extra margin */
+    overflow: hidden; /* Prevent content from spilling out */
+    word-wrap: break-word; /* Break long words */
+    overflow-wrap: break-word; /* Ensure compatibility */
+    text-overflow: ellipsis; /* Optional: Add ellipsis for overflowing text */
 }
 
 .row:hover {
