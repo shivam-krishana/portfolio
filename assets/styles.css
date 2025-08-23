@@ -273,7 +273,14 @@ section {
   grid-gap: 3rem;
   align-items: center;
   margin-top: 4.4rem;
+  grid-auto-rows: 1fr;
+}
 
+@media (max-width: 600px) {
+    .resume-content {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 15px; /* Adjust gap for smaller screens */
+    }
 }
 
 .box {
